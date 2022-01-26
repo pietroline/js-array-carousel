@@ -23,7 +23,7 @@
 }
 
 .big_item{
-    height: 80vh;
+    height: 50vh;
     display: none;
 
     position: relative;
@@ -50,7 +50,6 @@
 }
 
 .small_thumb{
-    height: 80vh;
     width: 30%;
 
     display: flex;
@@ -60,7 +59,7 @@
 }
 
 .small_item{
-    height: calc(100% / 5);
+    height: calc(50vh / 5);
 
     filter: brightness(0.5);
 }

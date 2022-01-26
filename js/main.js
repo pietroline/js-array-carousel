@@ -34,11 +34,12 @@ for (let i=0; i<items.length; i++){
                             <h4>${title[i]}</h4>
                             <p>${text[i]}</p>
                         </div>
-                    </div>`;
+                    </div>
+    `;
 
     thumbnails += `  <div class="small_item">
-                    <img src="${items[i]}">
-                </div>
+                        <img src="${items[i]}">
+                    </div>
     
     `;    
 
@@ -47,17 +48,17 @@ for (let i=0; i<items.length; i++){
 let bigThumb = document.querySelector(".big_thumb");
 bigThumb.innerHTML = slides;
 
-let smallThumb = document.querySelector(".small_thumb");
+let smallThumb = document.querySelector(".contenitoreSmallItems");
 smallThumb.innerHTML = thumbnails;
 
 
 
 // inizializzo una variabile che mi tenga traccia della slide attiva
-let currentSlide = 4;
+let currentSlide = 1;
 
 
 let slidesActive = document.getElementsByClassName("big_item");
-slidesActive[currentSlide].classList.add("active");s
+slidesActive[currentSlide].classList.add("active");
 
 let thumbActive = document.getElementsByClassName("small_item");
 thumbActive[currentSlide].classList.add("active");
