@@ -53,12 +53,69 @@ smallThumb.innerHTML = thumbnails;
 
 
 
-// inizializzo una variabile che mi tenga traccia della slide attiva
-let currentSlide = 1;
+// inizializzo variabile che tenga traccia della slide attiva
+let currentSlide = 4;
 
-
+// Inizializzo lo stato iniziale 
 let slidesActive = document.getElementsByClassName("big_item");
 slidesActive[currentSlide].classList.add("active");
 
 let thumbActive = document.getElementsByClassName("small_item");
 thumbActive[currentSlide].classList.add("active");
+
+
+// gestisto evento di click sulle frecce per scorrere il carosello
+let arrowUp = document.getElementById("arrowUp");
+
+arrowUp.addEventListener("click", 
+
+    function(){
+
+        if(currentSlide != 0){
+            slidesActive[currentSlide].classList.remove("active");
+            thumbActive[currentSlide].classList.remove("active");
+
+            currentSlide = currentSlide -1;
+
+            slidesActive[currentSlide].classList.add("active");
+            thumbActive[currentSlide].classList.add("active");
+
+        }else{
+            slidesActive[currentSlide].classList.remove("active");
+            thumbActive[currentSlide].classList.remove("active");
+
+            currentSlide = items.length -1;
+
+            slidesActive[currentSlide].classList.add("active");
+            thumbActive[currentSlide].classList.add("active");
+        }   
+    }
+
+);
+
+let arrowDown = document.getElementById("arrowDown");
+
+arrowDown.addEventListener("click", 
+
+    function(){
+
+        if(currentSlide != items.length -1){
+            slidesActive[currentSlide].classList.remove("active");
+            thumbActive[currentSlide].classList.remove("active");
+
+            currentSlide = currentSlide +1;
+
+            slidesActive[currentSlide].classList.add("active");
+            thumbActive[currentSlide].classList.add("active");
+        }else{
+            slidesActive[currentSlide].classList.remove("active");
+            thumbActive[currentSlide].classList.remove("active");
+
+            currentSlide = 0;
+
+            slidesActive[currentSlide].classList.add("active");
+            thumbActive[currentSlide].classList.add("active");
+        }  
+    }
+
+);
