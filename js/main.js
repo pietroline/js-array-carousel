@@ -37,18 +37,18 @@ for (let i=0; i<items.length; i++){
                     </div>
     `;
 
-    thumbnails += `  <div class="small_item">
-                        <img src="${items[i]}">
+    thumbnails += `  <div class="small_item smallThumb">
+                        <a href="#"><img src="${items[i]}"></a>
                     </div>
     
     `;    
 
 }
 
-let bigThumb = document.querySelector(".big_thumb");
+const bigThumb = document.querySelector(".big_thumb");
 bigThumb.innerHTML = slides;
 
-let smallThumb = document.querySelector(".contenitoreSmallItems");
+const smallThumb = document.querySelector(".contenitoreSmallItems");
 smallThumb.innerHTML = thumbnails;
 
 
@@ -57,15 +57,15 @@ smallThumb.innerHTML = thumbnails;
 let currentSlide = 4;
 
 // Inizializzo lo stato iniziale 
-let slidesActive = document.getElementsByClassName("big_item");
+const slidesActive = document.getElementsByClassName("big_item");
 slidesActive[currentSlide].classList.add("active");
 
-let thumbActive = document.getElementsByClassName("small_item");
+const thumbActive = document.getElementsByClassName("small_item");
 thumbActive[currentSlide].classList.add("active");
 
 
-// gestisto evento di click sulle frecce per scorrere il carosello
-let arrowUp = document.getElementById("arrowUp");
+// gestisco evento di click sulle frecce per scorrere il carosello
+const arrowUp = document.getElementById("arrowUp");
 
 arrowUp.addEventListener("click", 
 
@@ -93,7 +93,7 @@ arrowUp.addEventListener("click",
 
 );
 
-let arrowDown = document.getElementById("arrowDown");
+const arrowDown = document.getElementById("arrowDown");
 
 arrowDown.addEventListener("click", 
 
@@ -119,3 +119,28 @@ arrowDown.addEventListener("click",
     }
 
 );
+
+// gestione evento di click sulle miniature
+const clickSmallThumb = document.getElementsByClassName("smallThumb");
+
+for(let i=0; i<items.length; i++){
+
+    clickSmallThumb[i].addEventListener("click",
+
+        function(){
+            slidesActive[currentSlide].classList.remove("active");
+            thumbActive[currentSlide].classList.remove("active");
+
+            currentSlide = i;
+
+            slidesActive[currentSlide].classList.add("active");
+            thumbActive[currentSlide].classList.add("active");
+        }
+
+    );
+
+}
+
+
+
+
