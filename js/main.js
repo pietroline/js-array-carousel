@@ -33,6 +33,7 @@ for (let i=0; i<items.length; i++){
                         <div class="text">
                             <h4>${title[i]}</h4>
                             <p>${text[i]}</p>
+                        </div>
                     </div>`;
 
     thumbnails += `  <div class="small_item">
@@ -52,10 +53,11 @@ smallThumb.innerHTML = thumbnails;
 
 
 // inizializzo una variabile che mi tenga traccia della slide attiva
-let currentSlide = 3;
+let currentSlide = 4;
+
 
 let slidesActive = document.getElementsByClassName("big_item");
-slidesActive[currentSlide].classList.add("active");
+slidesActive[currentSlide].classList.add("active");s
 
 let thumbActive = document.getElementsByClassName("small_item");
 thumbActive[currentSlide].classList.add("active");
